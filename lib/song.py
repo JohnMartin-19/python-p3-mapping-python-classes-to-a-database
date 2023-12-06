@@ -1,6 +1,7 @@
 from config import CONN, CURSOR
 
 class Song:
+     all = []
      def __init__(self, name, album):
         self.id = None
         self.name = name
@@ -35,9 +36,13 @@ class Song:
 
         CURSOR.execute(sql, (self.name, self.album))
 
+
+
+
 Song.create_table()
 hello = Song("Hello", "25")
 hello.save()
 
 despacito = Song("Despacito", "Vida")
 despacito.save()
+Song.all
